@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test mini server</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>server online</h1>
+      <h2><%= title %></h2>
+      <table class="table table-dark table-striped table-responsive-md">
+        <tbody class="rounded">
+          <tr>
+            <th>Npm</th>
+            <th>Nama</th>
+            <th>Kelas</th>
+          </tr>
+          <% for(let user of users){ %>
+          <tr>
+            <td><%= user.npm %></td>
+            <td><%= user.nama %></td>
+            <td><%= user.kelas %></td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- js -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
