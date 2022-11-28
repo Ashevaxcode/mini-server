@@ -12,24 +12,58 @@
       <h1>server online</h1>
       <h2><%= title %></h2>
       <table class="table table-dark table-striped table-responsive-md">
-        <tbody class="rounded">
+        <thead>
           <tr>
             <th>Npm</th>
             <th>Nama</th>
             <th>Kelas</th>
+            <th style="text-align: center">Edit | Hapus</th>
           </tr>
+        </thead>
+        <tbody>
           <% for(let user of users){ %>
           <tr>
-            <td><%= user.npm %></td>
+            <td name="npm"><%= user.npm %></td>
             <td><%= user.nama %></td>
             <td><%= user.kelas %></td>
+            <td style="text-align: center">
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-primary edit" name="edit">
+                  Edit
+                </button>
+                <button type="button" class="btn btn-danger hapus" name="hapus">
+                  Hapus
+                </button>
+              </div>
+            </td>
           </tr>
           <% } %>
         </tbody>
       </table>
-    </div>
+      <!-- form-->
+      <form action="/tambah" method="post">
+        <div>
+          <div class="mb-3">
+            <label for="nama" class="form-label">Nama Lengkap</label>
+            <input type="text" class="form-control" id="nama" name="nama" />
+          </div>
+          <div class="mb-3">
+            <label for="kelas" class="form-label">Kelas</label>
+            <input type="text" class="form-control" id="kelas" name="kelas" />
+          </div>
 
+          <input
+            type="submit"
+            id="submit"
+            value="Input data"
+            class="btn btn-danger"
+          />
+        </div>
+      </form>
+    </div>
     <!-- js -->
+
     <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./script/myscript.js"></script>
   </body>
 </html>
